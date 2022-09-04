@@ -1,0 +1,71 @@
+
+                                                      HIBERNATE FRAMEWORK
+
+	Hibernate is a java framework that simplifies the development of java application to interact with the database.
+
+	Hibernate is a ORM (object relational mapping) tool. ---> mapping of each variable of object to table column.
+
+	It is an open source, lightweight.
+
+	Hibernate is a non-invasive framework, means it won't forces the programmers to extend/implement any class/interface.
+
+	Any type of application can build with hibernate framework.
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+TRADITIONAL WAY TO SAVE DATA(JDBC)
+
+  OBJECTS-------CALLS JDBC(API)------------------->DATABASE
+
+WE write code manually to store objects(data) to database using jdbc
+
+WHERE HIBERNATE PLAY ITS ROLE
+
+Data(objects)----gives object to hibernate------>hibernate(ORM)-------------------->DATABASE
+
+class ABC{
+                ----------------->mapp this class to table ABC ----------------> DB
+}
+
+Now it is automatically done by hibernate
+-----------------------------------------------------------------------------------------------------------------------------
+
+HIBERNATE IS BASED ON JDBC---> IT MEANS WHEN IT SAVES DATA IN DB IT WILL APPLY INSERT QUERY IN BACKEND.
+
+
+-----------------------------------------------------------------------------------------------------------------
+
+HIBERNATE ANNOTATIONS
+
+@Entity --> use to mark class as Entity
+@Table --> use to change the table details.
+@Id --> use to mark column as(primary key)
+@GeneratedValue --> hibernate will automatically generate values for that using an internal sequence, therefore we don't
+ have to set it manually.
+ @Column ---> can be used to specify column mappings. for eg to change the column name in the associated table in database.
+ @Transient --> This tells hibernate not to save this filed.
+ @Temporal --> @Temporal over a date filed tells hibernate the format in which the date needs to be saved.
+@Lob -->> tells hibernate that this is a large objects not a simpel object.
+
+@OneToOne, @OneToMany, @ManyToOne, @joinColumn etc
+
+
+-------------------------------------------------------------------------------------------------------------------
+
+ <property name="hbm2ddl.auto">create</property> ->>> create means Hibernate: drop table if exists Student_Address
+
+ update means ------->>> update the table
+
+ ------------------------------------------------------------------------------------------------------------------
+
+ HIBERNATE/PERSISTENCE LIFECYCLE
+
+ we give our object to hibernate and then hibernate sves it to DB, so in between what will be the lifecyle we will discuss it here.
+
+session object provides us method to save our object in database.
+
+
+ 1. Trasnient -->> when we create new object and set properties then it goes to transient state. still not in session and DB
+ 2. Persistence -->> then we give our object to session object then session saves it to DB in form of table. (object is associated to session object and in DB)
+ 3. Detached -->> when we close our session, it is no longer associated and it comes to detached state
+ 4. Removed -->> if we want to delete the value, in this we removed the value from DB but the object is still associated with the session object
