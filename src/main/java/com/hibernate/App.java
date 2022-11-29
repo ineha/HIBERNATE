@@ -1,12 +1,13 @@
 package com.hibernate;
 
+import com.hibernate.Fetch.Address;
+import com.hibernate.Fetch.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
         System.out.println( "project started" );
-        //for creating session factory we need to obtin object of configuration
+        //for creating session factory we need to obtain object of configuration
         Configuration cfg = new Configuration();
         //give the path of xml file
         cfg.configure("hibernate.cfg.xml");

@@ -1,4 +1,4 @@
-package com.hibernate;
+package com.hibernate.Fetch;
 
 import javax.persistence.*;
 import java.util.Date;

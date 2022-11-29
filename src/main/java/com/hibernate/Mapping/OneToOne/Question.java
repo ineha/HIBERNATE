@@ -1,9 +1,8 @@
-package com.hibernate.Mapping;
+package com.hibernate.Mapping.OneToOne;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import com.hibernate.Mapping.OneToOne.Answer;
+
+import javax.persistence.*;
 
 @Entity
 public class Question {
@@ -12,9 +11,19 @@ public class Question {
 
     private String question;
     @OneToOne
+    @JoinColumn(name = "a_id") //change name of column having foreign key
     private Answer answer;
 
     public Question() {
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "questionId=" + questionId +
+                ", question='" + question + '\'' +
+                ", answer=" + answer +
+                '}';
     }
 
     public Question(int questionId, String question, Answer answer) {

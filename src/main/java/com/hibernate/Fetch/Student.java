@@ -1,4 +1,6 @@
-package com.hibernate;
+package com.hibernate.Fetch;
+
+import com.hibernate.Certificate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

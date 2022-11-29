@@ -1,4 +1,4 @@
-package com.hibernate.Mapping;
+package com.hibernate.Mapping.OneToOne;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,6 +20,11 @@ public class MapDemo {
         session.save(question);
         session.save(answer);
         tx.commit();
+
+        //fetching data from DB
+        Question question1 = (Question)session.get(Question.class, 312);
+        System.out.println(question1.getQuestion());
+       System.out.println(question1.getAnswer().getAnswer());
         session.close();
 
 

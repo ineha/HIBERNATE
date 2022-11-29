@@ -60,7 +60,7 @@ HIBERNATE ANNOTATIONS
 
  HIBERNATE/PERSISTENCE LIFECYCLE
 
- we give our object to hibernate and then hibernate sves it to DB, so in between what will be the lifecyle we will discuss it here.
+ we give our object to hibernate and then hibernate saves it to DB, so in between what will be the lifecyle we will discuss it here.
 
 session object provides us method to save our object in database.
 

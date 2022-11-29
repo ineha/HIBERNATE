@@ -1,5 +1,6 @@
 package com.hibernate;
 
+import com.hibernate.Fetch.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
